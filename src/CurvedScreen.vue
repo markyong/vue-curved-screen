@@ -11,6 +11,9 @@
         :style="screenHeightStyle"
         v-for="rowItem in row"
         :key="rowItem"
+        @click="handleClick(columnItem, rowItem, $event)"
+        @mouseover="handleMouseEnter(columnItem, rowItem, $event)"
+        @mouseleave="handleMouseLeave(columnItem, rowItem, $event)"
       >
         <slot :name="`screen${rowItem}${columnItem}`"></slot>
       </div>
@@ -125,6 +128,17 @@ export default {
       }
 
       return arr
+    }
+  },
+  methods: {
+    handleClick (columnItem, rowItem, event) {
+      this.$emit('screen-click', { columnItem, rowItem, event })
+    },
+    handleMouseEnter (columnItem, rowItem, event) {
+      this.$emit('screen-mouse-enter', { columnItem, rowItem, event })
+    },
+    handleMouseLeave (columnItem, rowItem, event) {
+      this.$emit('screen-mouse-leave', { columnItem, rowItem, event })
     }
   }
 }
