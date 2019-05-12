@@ -1,8 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
+import VueCurvedScreen from './CurvedScreen.vue'
 
-Vue.config.productionTip = false
+export default VueCurvedScreen
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.component('VueCurvedScreen', VueCurvedScreen)
+}
