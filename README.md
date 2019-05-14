@@ -1,29 +1,55 @@
 # vue-curved-screen
 
-## Project setup
+> A curved screen display component based on Vue.js.
+
+## Preview
+ 
+
+![preview](./public/preview.jpg)
+
+## How to use
+
 ```
-npm install
+npm install vue-curved-screen -S
 ```
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+<template>
+  <curved-screen>
+      <template #screen11>
+        <img src="/test.png">
+      </template>
+      <template #screen12>
+        <img src="/test.png">
+      </template>
+  </curved-screen>
+</template>
+
+<script>
+import CurvedScreen from 'vue-curved-screen'
+
+export default {
+  name: 'App',
+  components: {
+    CurvedScreen
+  }
+}
+</script>
+
 ```
 
-### Compiles and minifies for production
+## Events
+
 ```
-npm run build
+|Event Name|Description|Parameters|
+| -- | -- |
+|screen-click|triggers when clicking a screen|{ columnItem, rowItem, event }|
+|screen-mouse-enter|triggers when hovering into a screen|{ columnItem, rowItem, event }|
+|screen-mouse-leave|triggers when hovering out of a screen|{ columnItem, rowItem, event }|
 ```
 
-### Run your tests
-```
-npm run test
-```
+## Todo
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [ ] Custome ratation angle.
+- [ ] Custome number of screens.
+- [ ] Add animation.
