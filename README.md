@@ -40,13 +40,11 @@ export default {
 
 ## Events
 
-```
 |Event Name|Description|Parameters|
-| -- | -- |
+| -- | -- | -- |
 |screen-click|triggers when clicking a screen|{ columnItem, rowItem, event }|
 |screen-mouse-enter|triggers when hovering into a screen|{ columnItem, rowItem, event }|
 |screen-mouse-leave|triggers when hovering out of a screen|{ columnItem, rowItem, event }|
-```
 
 ## Todo
 
